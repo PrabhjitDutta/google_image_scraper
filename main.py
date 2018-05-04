@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 from io import BytesIO
 from PIL import Image
 
-search_term = input('Enter Search term')
-params = {'q': 'football'}
+search_term = input('Enter Search term: ')
+params = {'q': search_term}
 r = requests.get('https://www.google.co.in/search', params=params)
 
 soup = BeautifulSoup(r.text, 'html5lib')
@@ -19,4 +19,5 @@ if ("encrypted" not in link):
 
 r = requests.get(link)
 image = Image.open(BytesIO(r.content))
-image.save()
+image.save('image', 'png')
+image.close()
