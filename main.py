@@ -7,7 +7,7 @@ search_term = input('Enter Search term: ')
 params = {'q': search_term}
 r = requests.get('https://www.google.co.in/search', params=params)
 
-soup = BeautifulSoup(r.text, 'html5lib')
+soup = BeautifulSoup(r.text, 'html.parser')
 
 links = soup.find('div', id='search')
 links = links.find_all('img')
@@ -20,4 +20,3 @@ if ("encrypted" not in link):
 r = requests.get(link)
 image = Image.open(BytesIO(r.content))
 image.save('image', 'png')
-image.close()
