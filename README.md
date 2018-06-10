@@ -5,10 +5,10 @@ Basic image scrapper to download the first image that comes in a google search.
 Can easily be modified furthur to download multiple images.
 
 Modules used :-
-* 'requests'
-* 'bs4'
-* 'io'
-* 'PIL'
+* `requests`
+* `bs4`
+* `io`
+* `PIL`
 
 ## Usage
 
